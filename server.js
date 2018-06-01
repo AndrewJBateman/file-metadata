@@ -22,18 +22,8 @@ app.post('/upload', upload.single('upfile'), (req, res, next) =>{
            type:  req.file.mimetype,
            size:  req.file.size +' bytes'}
   );
-  deleteFile('file');
+  
 });
-
-function deleteFile (file) { 
-    fs.unlink(file, function (err) {
-        if (err) {
-            console.error(err.toString());
-        } else {
-            console.warn(file + ' deleted');
-        }
-    });
-}
 
 // listen for requests :)
 const listener = app.listen("3000", () => {
