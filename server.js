@@ -21,8 +21,7 @@ app.post('/upload', upload.single('upfile'), (req, res, next) =>{
           {name:  req.file.originalname,
            type:  req.file.mimetype,
            size:  req.file.size +' bytes'}
-  );
-  
+  ); 
 });
 
 // listen for requests :)
