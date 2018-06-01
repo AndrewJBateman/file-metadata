@@ -10,11 +10,12 @@ const express = require('express'),
     
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static('public'));
 
-app.get("/", (req, res, next) => {
-  res.sendFile(__dirname + '/views/index.html')
-})
+//app.get("/", (req, res, next) => {
+  //res.sendFile(__dirname + '/views/index.html')
+//})
+
+app.use(express.static(__dirname + '/public'));
 
 app.post('/upload', upload.single('file'), (req, res, next) => {
   
