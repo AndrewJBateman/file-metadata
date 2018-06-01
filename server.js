@@ -1,5 +1,6 @@
 // init project
 const express = require('express'),
+      fs = require('fs'),
       bodyParser = require('body-parser'),
       cors = require('cors'),
       multer = require('multer'),
@@ -21,9 +22,11 @@ app.post('/upload', upload.single('upfile'), (req, res, next) =>{
            type:  req.file.mimetype,
            size:  req.file.size +' bytes'}
   );
+  const filePath = '/uploads'; 
+  fs.unlinkSync(filePath);
 });
 
-app.drop('/upload');
+
 
 // listen for requests :)
 const listener = app.listen("3000", () => {
