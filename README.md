@@ -9,12 +9,12 @@ Live Site https://github.com/AndrewJBateman/file-metadata.git
 Example file query output:
 
 {
-"fieldname": "upfile",
-"originalname": "On the beach.jpg",
-"encoding": "7bit",
-"mimetype": "image/jpeg",
-"destination": "uploads",
-"filename": "bfce231d4e79c19f33f7102fec552251",
-"path": "uploads/bfce231d4e79c19f33f7102fec552251",
-"size": 88016
+    "fieldname": "upfile",
+    "originalname": "Oscar in a caravan.jpg",
+    "encoding": "7bit",
+    "mimetype": "image/jpeg",
+    "destination": "uploads",
+    "filename": "ff13bb4af6a593f32b8e52f4e261b90f",
+    "path": "uploads/ff13bb4af6a593f32b8e52f4e261b90f",
+    "size": 170629
 }
