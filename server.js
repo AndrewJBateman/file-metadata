@@ -14,12 +14,14 @@ app.use(cors());
 app.use(express.static(__dirname + '/public'));
 
 app.post('/upload', upload.single('upfile'), (req, res, next) => {
-  //return res.json(req.file.originalname); 
+  //return res.json(req.file); 
   var size = req.file && req.file.size;
 	res.json(typeof size == 'undefined' ? 
-          {error: 'there is no file'} : 
-          {filename: req.file.originalname,
-          size_in_bytes: req.file.size}
+          {error: 'sorry, but no file exists'} : 
+          {'File Metadata',
+           name:  req.file.originalname,
+           type:  req.file.mimetype,
+           size:  req.file.size +' bytes'}
   );
 });
 
