@@ -4,7 +4,6 @@ const express = require('express'),
       cors = require('cors'),
       multer = require('multer'),
       upload = multer({dest: 'uploads'}),
-      dotenv = require('dotenv').load(),
       app = module.exports = express(),
       port = process.env.PORT || 8080;
     
