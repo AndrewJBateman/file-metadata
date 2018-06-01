@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.post('/upload', upload.single('file'), (req, res, next) => {
   
-  res.sendStatus(200)
+  return res.json(req.file);  
 })
 
 // listen for requests :)
