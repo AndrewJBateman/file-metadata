@@ -3,20 +3,19 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       cors = require('cors'),
       multer = require('multer'),
-      app = express();
+      app = module.exports = express(),
+      port = process.env.PORT || 8080;
 
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
-
-// http://expressjs.com/en/starter/static-files.html
+app.use(bodyParser.json());
+app.use(cors);
 app.use(express.static('public'))
 
-// http://expressjs.com/en/starter/basic-routing.html
+
 app.get("/", (request, response) => {
   response.sendFile(__dirname + '/views/index.html')
 })
 
-// Simple in-memory store
+
 const dreams = [
   "Find and count some sheep",
   "Climb a really tall mountain",
@@ -34,6 +33,6 @@ app.post("/dreams", (request, response) => {
 })
 
 // listen for requests :)
-const listener = app.listen(process.env.PORT, () => {
+const listener = app.listen(port, () => {
   console.log(`Your app is listening on port ${listener.address().port}`)
 })
