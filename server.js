@@ -1,9 +1,9 @@
-// server.js
-// where your node app starts
-
 // init project
-const express = require('express')
-const app = express()
+const express = require('express'),
+      bodyParser = require('body-parser'),
+      cors = require('cors'),
+      multer = require('multer'),
+      app = express();
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
