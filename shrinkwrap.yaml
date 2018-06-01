@@ -1,6 +1,7 @@
 dependencies:
   body-parser: 1.18.3
   cors: 2.8.4
+  dotenv: 5.0.1
   express: 4.16.3
   multer: 1.3.0
 packages:
@@ -151,6 +152,12 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-WZbAhrszIYyBLAkL3cCc0S+stw8=
+  /dotenv/5.0.1:
+    dev: false
+    engines:
+      node: '>=4.6.0'
+    resolution:
+      integrity: sha512-4As8uPrjfwb7VXC+WnLCbXK7y+Ueb2B3zgNCePYfhxS1PYeaO1YTeplffTEcbfLhvFNGLAz90VvJs9yomG7bow==
   /ee-first/1.1.1:
     dev: false
     resolution:
@@ -587,5 +594,6 @@ shrinkwrapVersion: 3
 specifiers:
   body-parser: ^1.18.3
   cors: ^2.8.4
+  dotenv: ^5.0.1
   express: ^4.16.3
   multer: ^1.3.0

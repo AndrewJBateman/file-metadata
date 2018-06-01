@@ -3,6 +3,7 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       cors = require('cors'),
       multer = require('multer'),
+      dotenv = require('dotenv').load(),
       app = module.exports = express(),
       port = process.env.PORT || 8080;
 
@@ -14,19 +15,8 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + '/views/index.html')
 })
 
-const dreams = [
-  "Find and count some sheep",
-  "Climb a really tall mountain",
-  "Wash the dishes"
-]
-
-app.get("/dreams", (request, response) => {
-  response.send(dreams)
-})
-
-// could also use the POST body instead of query string: http://expressjs.com/en/api.html#req.body
-app.post("/dreams", (request, response) => {
-  dreams.push(request.query.dream)
+app.post("/upload", (request, response) => {
+  
   response.sendStatus(200)
 })
 
