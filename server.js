@@ -12,15 +12,16 @@ app.use(cors());
 
 app.use(express.static(__dirname + '/public'));
 
-app.post('/upload', upload.single('upfile'), (req, res, next) => {
-  //return res.json(req.file); 
-  var size = req.file && req.file.size;
-  res.json(typeof size == 'undefined' ? 
+app.post('/upload', upload.single('upfile'), (req, res, next) => { 
+  var fileSize = req.file && req.file.size;
+  console.log(typeof(fileSize)); //should return 'number'
+  res.json(typeof fileSize == 'undefined' ? 
           {error: 'sorry, but there is a file error'} : 
           {name:  req.file.originalname,
            type:  req.file.mimetype,
            size:  req.file.size +' bytes'}
   );
+app.delete('/upload', 
 });
 
 // listen for requests :)
