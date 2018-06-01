@@ -7,14 +7,12 @@ const express = require('express'),
       port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
-app.use(cors);
-app.use(express.static('public'))
-
+app.use(cors());
+app.use(express.static('public'));
 
 app.get("/", (request, response) => {
   response.sendFile(__dirname + '/views/index.html')
 })
-
 
 const dreams = [
   "Find and count some sheep",
@@ -33,6 +31,6 @@ app.post("/dreams", (request, response) => {
 })
 
 // listen for requests :)
-const listener = app.listen(port, () => {
+const listener = app.listen("3000", () => {
   console.log(`Your app is listening on port ${listener.address().port}`)
 })
