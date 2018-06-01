@@ -3,21 +3,22 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       cors = require('cors'),
       multer = require('multer'),
+      upload = multer({dest: 'uploads'}),
       dotenv = require('dotenv').load(),
       app = module.exports = express(),
       port = process.env.PORT || 8080;
-
+    
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.static('public'));
 
-app.get("/", (request, response) => {
-  response.sendFile(__dirname + '/views/index.html')
+app.get("/", (req, res, next) => {
+  res.sendFile(__dirname + '/views/index.html')
 })
 
-app.post("/upload", (request, response) => {
+app.post('/upload', upload.single('file'), (req, res, next) => {
   
-  response.sendStatus(200)
+  res.sendStatus(200)
 })
 
 // listen for requests :)
