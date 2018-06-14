@@ -1,3 +1,4 @@
+'use strict';
 // init project
 const express = require('express'),
       fs = require('fs'),
@@ -13,7 +14,7 @@ app.use(cors());
 
 app.use(express.static(__dirname + '/public'));
 
-app.post('/upload', upload.single('upfile'), (req, res, next) =>{ 
+app.post('/api/fileanalyse', upload.single('upfile'), (req, res, next) =>{ 
   var fileSize = req.file && req.file.size;
   console.log(typeof(fileSize)); //should return 'number'
   res.json(typeof fileSize == 'undefined' ? 
@@ -24,7 +25,13 @@ app.post('/upload', upload.single('upfile'), (req, res, next) =>{
   ); 
 });
 
+app.use('/public', express.static(process.cwd() + '/public'));
+
+app.get('/', function (req, res) {
+     res.sendFile(process.cwd() + '/views/index.html');
+  });
+
 // listen for requests :)
-const listener = app.listen("3000", () => {
-  console.log(`Your app is listening on port ${listener.address().port}`)
+const listener = app.listen(port, () => {
+  console.log(`Your app is listening on ` +port)
 })
