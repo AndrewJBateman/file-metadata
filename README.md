@@ -1,7 +1,6 @@
 # :zap: File Metadata Microservice for freeCodeCamp
 
-* Creates a url short ID and stores it in a database with the original url
-* Adding the shortID in a url address will redirect to the original website
+* extracts uploaded file metadata and stores file using [multer](https://www.npmjs.com/package/multer) node.js middleware
 * This was part of the FreeCodeCamp exercises for Front End Certification
 
 *** Note: to open web links in a new window use: _ctrl+click on link_**
