@@ -2,8 +2,12 @@
 
 * extracts uploaded file metadata and stores file using [multer](https://www.npmjs.com/package/multer) node.js middleware
 * This was part of the FreeCodeCamp exercises for Front End Certification
+* **Note:** to open web links in a new window use: _ctrl+click on link_
 
-*** Note: to open web links in a new window use: _ctrl+click on link_**
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/file-metadata?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/file-metadata?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/file-metadata?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/file-metadata?style=plastic)
 
 ## :page_facing_up: Table of contents
 
@@ -34,7 +38,7 @@
 
 ## :signal_strength: Technologies
 
-* [Node v12](https://nodejs.org/en/) javaScript runtime built on Chrome's V8 JavaScript engine
+* [Node v14](https://nodejs.org/en/) javaScript runtime built on Chrome's V8 JavaScript engine
 * [Express v5](https://expressjs.com/) Fast, unopinionated, minimalist web framework for Node.js
 * [multer v1](https://www.npmjs.com/package/multer) node.js middleware for handling multipart/form-data, mainly used for uploading files
 * [Cors v2](https://www.npmjs.com/package/cors) node.js package for providing Connect/Express middleware that can be used to enable CORS with various options.
@@ -77,6 +81,10 @@ app.post('/api/fileanalyse', upload.single('upfile'), (req, res, next) => {
 
 * [freeCodeCamp's APIs and Microservices Projects - File Metadata Microservice](https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/file-metadata-microservice)
 
+## :file_folder: License
+
+* This project is licensed under the terms of the MIT license.
+
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://www.andrewbateman.org) - you are welcome to [send me a message](https://andrewbateman.org/contact)
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
